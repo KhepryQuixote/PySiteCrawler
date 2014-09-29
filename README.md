@@ -8,11 +8,12 @@ As this program is presently targeted for Ubuntu 14.04 LTS, please use the follo
 ##Tor##
 
 Install Tor.
-<pre>
+
+```shell
 sudo apt-get update
 sudo apt-get install tor
 sudo /etc/init.d/tor restart
-</pre>
+```
 
 *Notice that the socks listener is on port 9050.*
 
@@ -24,30 +25,36 @@ Next, do the following:
 
 You can create a hashed password out of your password using:
 	
-`tor --hash-password my_password`
+```shell
+tor --hash-password my_password
+```
 
 Then, update the /etc/tor/torrc with the port, hashed password, and cookie authentication.
 
-`sudo gedit /etc/tor/torrc`
+```shell
+sudo gedit /etc/tor/torrc
+```
 
-<pre>
+```shell
 ControlPort 9051
 # hashed password below is obtained via `tor --hash-password my_password`
 HashedControlPassword 16:E600ADC1B52C80BB6022A0E999A7734571A451EB6AE50FED489B72E3DF
 CookieAuthentication 1
-</pre>
+```
 
 Restart Tor again to the configuration changes are applied.
 	
-`sudo /etc/init.d/tor restart`
+```shell
+sudo /etc/init.d/tor restart
+```
 
 ##python-stem##
 
 Next, install `python-stem` which is a Python-based module used to interact with the Tor Controller, letting us send and receive commands to and from the Tor Control port programmatically.
 
-<pre>
+```shell
 sudo apt-get install python-stem
-</pre>
+```
 
 ##privoxy##
 
@@ -55,19 +62,27 @@ Tor itself is not a http proxy. So in order to get access to the Tor Network, we
 
 Install `privoxy` via the following command:
 	
-`sudo apt-get install privoxy`
+```shell
+sudo apt-get install privoxy
+```
 
 Now, tell `privoxy` to use TOR by routing all traffic through the SOCKS servers at localhost port 9050.
 
-`sudo gedit /etc/privoxy/config`
+```shell
+sudo gedit /etc/privoxy/config
+```
 
 and enable `forward-socks5` as follows:
 	
-`forward-socks5 / localhost:9050`
+```shell
+forward-socks5 / localhost:9050
+```
 
 Restart `privoxy` after making the change to the configuration file.
 	
-`sudo /etc/init.d/privoxy restart`
+```shell
+sudo /etc/init.d/privoxy restart
+```
 
 ##Python Script##
 
@@ -176,7 +191,9 @@ for i in range(0, nbrOfIpAddresses):
 
 Execute the Python 2.7 script above via the following command:
 	
-`python test_tor_stem_privoxy.py`
+```shell
+python test_tor_stem_privoxy.py
+```
 
-The IP address change every few seconds.
+When the above script is executed, one should see that the IP address is changing every few seconds.
 
