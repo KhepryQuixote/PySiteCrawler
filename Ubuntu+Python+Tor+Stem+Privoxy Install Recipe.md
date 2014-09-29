@@ -1,3 +1,6 @@
+#Ubuntu 14.04 LTS packages#
+##for Python+Tor+Stem+Privoxy scripting##
+
 - 7zip
 	- **p7zip**
 	- **p7zip-full**
