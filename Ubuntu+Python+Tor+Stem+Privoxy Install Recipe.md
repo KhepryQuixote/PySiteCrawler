@@ -84,7 +84,6 @@
 		- **spyder**
 		- sudo apt-get install spyder
 		- sudo pip install --upgrade spyder
-		- [Spyder 2.3.0](https://pypi.python.org/packages/source/s/spyder/spyder-2.3.0.zip#md5=7c99e0bc6485b0700f9570201282a139)
 - source code managers
 	- mercurial
 		- **mercurial**
