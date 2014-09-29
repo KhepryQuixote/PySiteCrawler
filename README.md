@@ -58,7 +58,7 @@ sudo apt-get install python-stem
 
 ##privoxy##
 
-Tor itself is not a http proxy. So in order to get access to the Tor Network, we will use `privoxy` as an http-proxy though socks5.
+Tor itself is not a http proxy. So in order to get access to the Tor Network, use `privoxy` as an http-proxy though socks5.
 
 Install `privoxy` via the following command:
 	
