@@ -1,0 +1,102 @@
+- 7zip
+	- **p7zip**
+	- **p7zip-full**
+	- sudo apt-get install p7zip p7zip-full
+- nautilus
+	- **nautilus-open-terminal**
+	- sudo apt-get install nautilus-open-terminal 
+- browsers
+	- **firefox**
+	- **chromium-browser**
+	- sudo apt-get install chromium-browser
+- cryptography
+	- **gnupg**
+	- **gpa**
+	- **kleopatra**
+	- **seahorse**
+	- **seahorse-nautilus**
+	- **rng-tools**
+		- This package may be required on virtual machines for the following reasons:
+			- Key generation requires the system to work with a source of random numbers. Systems which are better at generating random numbers than others are said to have higher entropy. This is typically obtained from the system hardware; the GnuPG documentation recommends that keys be generated only on a local machine (i.e. not one being accessed across a network), and that keyboard, mouse and disk activity be maximized during key generation to increase the entropy of the system.
+			- Unfortunately, there are some scenarios - for example, on virtual machines which don’t have real hardware - where insufficient entropy causes key generation to be extremely slow. If you come across this problem, you should investigate means of increasing the system entropy. On virtualized Linux systems, this can often be achieved by installing the rng-tools package. This is available at least on RPM-based and APT-based systems (Red Hat/Fedora, Debian, Ubuntu and derivative distributions).
+	- **haveged**
+		- Installing this may assist in obtaining the needed entropy to make GPG key generation run within an acceptable timeframe.  
+	- sudo apt-get install gnupg gpa kleopatra seahorse seahorse-nautilus rng-tools haveged
+- databases
+	- sqlite
+		- **sqlite3**
+		- **sqlitebrowser**
+		- **sqliteman**
+		- **sqliteman-doc**
+		- **libqt4-dev**
+		- **sqlite3-doc**
+		- sudo apt-get install sqlite3 sqlitebrowser sqliteman sqliteman-doc libqt4-dev sqlite3-doc
+		- **[sqlitestudio (Linux 64-bit)](http://sqlitestudio.pl/files/free/stable/linux64/sqlitestudio-2.1.5.bin)**
+- downloaders
+	- **filezilla**
+	- **transmission (a BitTorrent equivalent)**
+	- **transmission-gtk**
+	- sudo apt-get install filezilla transmission transmission-gtk 
+- editors
+	- **gedit** (is already installed with Linux)
+	- Markdown syntax
+		- **retext** (Markdown editor)
+	- sudo apt-get install gedit retext
+- folders
+	- ~/anaconda3 
+	- ~/apcd
+	- ~/generic
+	- ~/projects
+		- eclipse *(this is the "workspace" folder for the Eclipse IDE)*      
+		- python *(this is the "workspace" folder for the Spyder IDE)*
+- python
+	- python 2.7
+		- libraries 
+			- **python**
+			- **python-all**
+			- **python-dev**
+			- **python-bcrypt**
+			- **python-configparser**
+			- **python-crypto**
+			- **python-gdal**
+			- **python-gnupg**
+			- **python-pip**
+			- **python-numpy**
+			- **python-pandas**
+			- **python-pyqt4**
+			- **python-pysqlite2**
+			- **python-socksipy**
+			- **python-sphinx**
+			- **python-stem**
+			- **python-torctl**
+			- **python-xlrd**
+			- **python-zmq**
+			- sudo apt-get install python python-all python-dev python-bcrypt python-configparser python-crypto python-gdal python-gnupg python-numpy python-pandas python-pip python-pyqt4 python-pysqlite2 python-socksipy python-sphinx python-stem python-torctl python-xlrd python-zmq
+		- documentation
+			- **python-doc**  
+			- **python-pysqlite2-doc**
+			- **python-numpy-doc**
+			- sudo apt-get install python-doc python-pysqlite2-doc python-numpy-doc
+		- JIRA Python
+			- **jira**
+			- sudo pip install jira 
+	- ides
+		- **spyder**
+		- sudo apt-get install spyder
+		- sudo pip install --upgrade spyder
+		- [Spyder 2.3.0](https://pypi.python.org/packages/source/s/spyder/spyder-2.3.0.zip#md5=7c99e0bc6485b0700f9570201282a139)
+- source code managers
+	- mercurial
+		- **mercurial**
+		- **tortoisehg-nautilus**
+		- **tortoisehg**
+		- **python-iniparse**
+		- sudo apt-get install mercurial tortoisehg-nautilus tortoisehg python-iniparse
+- tor
+	- **tor**
+	- **tor-geoipdb**
+	- **vidalia**
+	- **torchat**
+	- **privoxy**
+	- sudo apt-get install tor tor-geoipdb vidalia torchat privoxy
+      
