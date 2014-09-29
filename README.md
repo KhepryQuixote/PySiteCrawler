@@ -7,22 +7,26 @@ As this program is presently targeted for Ubuntu 14.04 LTS, please use the follo
 
 ##Tor##
 
-First of all, install Tor.
+Install Tor.
 <pre>
 sudo apt-get update
 sudo apt-get install tor
 sudo /etc/init.d/tor restart
 </pre>
 
-Please notice that the socks listener is on port 9050.
+*Notice that the socks listener is on port 9050.*
 
-Enable the ControlPort listener for Tor to listen on port 9051. This is the port Tor will listen to for any communication from applications talking to the Tor controller. The hashed password and/or cookie authentication prevents random access to the port by outside agents.
+Next, do the following:
+
+- Enable the ControlPort listener for Tor to listen on port 9051, as this is the port to which Tor will listen for any communication from applications talking to the Tor controller.
+- Hash a new password that prevents random access to the port by outside agents.
+- Implement cookie authentication as well.
 
 You can create a hashed password out of your password using:
 	
 `tor --hash-password my_password`
 
-So, update the /etc/tor/torrc with the port, hashed password, and cookie authentication.
+Then, update the /etc/tor/torrc with the port, hashed password, and cookie authentication.
 
 `sudo gedit /etc/tor/torrc`
 
@@ -45,11 +49,11 @@ Next, install `python-stem` which is a Python-based module used to interact with
 sudo apt-get install python-stem
 </pre>
 
-##Privoxy##
+##privoxy##
 
 Tor itself is not a http proxy. So in order to get access to the Tor Network, we will use `privoxy` as an http-proxy though socks5.
 
-Install Privoxy via the following command:
+Install `privoxy` via the following command:
 	
 `sudo apt-get install privoxy`
 
@@ -67,9 +71,9 @@ Restart `privoxy` after making the change to the configuration file.
 
 ##Python Script##
 
-In the script below, we’re using `urllib2` to use the proxy. `privoxy` listens on port 8118 by default, and forwards the traffic to port 9050 upon which the Tor socks is listening.
+In the script below, `urllib2` is using the proxy. `privoxy` listens on port 8118 by default, and forwards the traffic to port 9050 upon which the Tor socks is listening.
 
-Additionally, in the `renew_connection()` function,  a signal is being sent to the Tor controller to change the identity, so you get new identities without restarting Tor. Sometimes it comes in handy when crawling a web site and one doesn’t wanted to be blocked based on IP address.
+Additionally, in the `renew_connection()` function,  a signal is being sent to the Tor controller to change the identity, so you get new identities without restarting Tor. Doing such comes in handy when crawling a web site and one doesn’t wanted to be blocked based on IP address.
 
 **test_tor_stem_privoxy.py**
 
