@@ -80,9 +80,6 @@
 			- **python-pysqlite2-doc**
 			- **python-numpy-doc**
 			- sudo apt-get install python-doc python-pysqlite2-doc python-numpy-doc
-		- JIRA Python
-			- **jira**
-			- sudo pip install jira 
 	- ides
 		- **spyder**
 		- sudo apt-get install spyder
