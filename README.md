@@ -77,7 +77,8 @@ Additionally, in the `renew_connection()` function,  a signal is being sent to t
 
 **test_tor_stem_privoxy.py**
 
-<pre>
+```python
+
 import stem
 import stem.connection
 
@@ -112,7 +113,7 @@ def request(url):
         proxy_support = urllib2.ProxyHandler({"http" : "127.0.0.1:8118"})
         opener = urllib2.build_opener(proxy_support)
         urllib2.install_opener(opener)
-        
+
     # request a URL
     # via the proxy
     _set_urlproxy()
@@ -170,7 +171,8 @@ for i in range(0, nbrOfIpAddresses):
     # new IP address
     print ("")
     print ("newIP: %s" % newIP)
-</pre>
+
+```
 
 Execute the Python 2.7 script above via the following command:
 	
